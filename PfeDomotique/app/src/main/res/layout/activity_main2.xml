@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity2">
+
+    <View
+        android:id="@+id/ViewHeaderBackground"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_125sdp"
+        android:background="@color/primary"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="Salon"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:src="@drawable/ic_add_btn_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/textTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textTitle"
+        app:tint="@color/white"
+        />
+
+ <com.google.android.material.card.MaterialCardView
+     android:id="@+id/CardHeaer"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_16sdp"
+     android:layout_marginEnd="@dimen/_16sdp"
+     app:cardBackgroundColor="@color/card_background"
+     app:cardCornerRadius="@dimen/_16sdp"
+     app:layout_constraintBottom_toBottomOf="@id/ViewHeaderBackground"
+     app:layout_constraintTop_toBottomOf="@id/ViewHeaderBackground"
+     >
+     <androidx.constraintlayout.widget.ConstraintLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="@dimen/_14sdp">
+         <TextView
+             android:id="@+id/textViews"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Infos"
+             android:textColor="@color/primary_text"
+             android:textSize="@dimen/_14ssp"
+             android:textStyle="bold"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             />
+         <LinearLayout
+             android:id="@+id/temeratureInfos"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/_8sdp"
+             android:gravity="center"
+             android:orientation="vertical"
+             app:layout_constraintEnd_toStartOf="@id/humidityInfos"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/textViews">
+
+             <androidx.appcompat.widget.AppCompatImageView
+                 android:layout_width="@dimen/_28sdp"
+                 android:layout_height="@dimen/_28sdp"
+                 android:src="@drawable/ic_temperature"
+                 />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/_4sdp"
+                 android:text="@string/temerature"
+                    android:textColor="@color/secondary_text"
+                 android:textSize="@dimen/_10ssp"
+                 />
+             <TextView
+                 android:id="@+id/valeurTemperature"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/_4sdp"
+                 android:text="27"
+                 android:textColor="@color/secondary_text"
+                 android:textSize="@dimen/_16ssp"
+                 />
+         </LinearLayout>
+
+         <LinearLayout
+             android:id="@+id/humidityInfos"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/_8sdp"
+             android:gravity="center"
+             android:orientation="vertical"
+             app:layout_constraintEnd_toStartOf="@id/iqaInfos"
+             app:layout_constraintStart_toEndOf="@id/temeratureInfos"
+             app:layout_constraintTop_toBottomOf="@id/textViews">
+
+             <androidx.appcompat.widget.AppCompatImageView
+                 android:layout_width="@dimen/_28sdp"
+                 android:layout_height="@dimen/_28sdp"
+                 android:src="@drawable/ic_humidity"
+                 />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/_4sdp"
+                 android:text="@string/humidite"
+                 android:textColor="@color/secondary_text"
+                 android:textSize="@dimen/_10ssp"
+                 />
+             <TextView
+                 android:id="@+id/valeurHumidite"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/_4sdp"
+                 android:text="50%"
+                 android:textColor="@color/secondary_text"
+                 android:textSize="@dimen/_16ssp"
+                 />
+         </LinearLayout>
+         <LinearLayout
+             android:id="@+id/iqaInfos"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/_8sdp"
+             android:gravity="center"
+             android:orientation="vertical"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toEndOf="@id/humidityInfos"
+             app:layout_constraintTop_toBottomOf="@id/textViews">
+
+             <androidx.appcompat.widget.AppCompatImageView
+                 android:layout_width="@dimen/_28sdp"
+                 android:layout_height="@dimen/_28sdp"
+                 android:src="@drawable/ic_air_quality"
+                 />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/_4sdp"
+                 android:text="@string/iqa"
+                 android:textColor="@color/secondary_text"
+                 android:textSize="@dimen/_10ssp"
+                 />
+             <TextView
+                 android:id="@+id/valeurIQA"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/_4sdp"
+                 android:text="30"
+                 android:textColor="@color/secondary_text"
+                 android:textSize="@dimen/_16ssp"
+                 />
+         </LinearLayout>
+     </androidx.constraintlayout.widget.ConstraintLayout>
+ </com.google.android.material.card.MaterialCardView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:padding="16.00dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CardHeaer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/charts_temperature_item"/>
+            <include layout="@layout/charts_humidite_item"/>
+            <include layout="@layout/charts_iqa_item"/>
+
+
+
+            <include layout="@layout/light_item"/>
+            <include layout="@layout/climat_item"/>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

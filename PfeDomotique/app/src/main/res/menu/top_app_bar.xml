@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/notifications"
+        android:icon="@drawable/ic_forum_24dp"
+        android:title=""
+        android:contentDescription=""
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/more"
+        android:title="Ajouter un appareil"
+        app:showAsAction="never" />
+
+</menu>
